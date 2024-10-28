@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Keyword Highlighter and Matcher",
+    "version": "1.0",
+    "description": "Highlights keywords on the current webpage and matches them with an uploaded document.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
+}
